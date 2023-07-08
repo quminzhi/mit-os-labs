@@ -1,0 +1,22 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "xv6debug",
+      "type": "cppdbg",
+      "request": "launch",
+      // "program": "${workspaceFolder}/kernel/kernel",
+      "program": "${workspaceFolder}/user/_xargs",
+      "stopAtEntry": true,
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb-multiarch",
+      "miDebuggerServerAddress": "127.0.0.1:26000",
+      "preLaunchTask": "xv6autobuild"
+    }
+  ]
+}

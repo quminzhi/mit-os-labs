@@ -103,14 +103,14 @@ runcmd(struct cmd *cmd)
       panic("pipe");
     if(fork1() == 0){
       close(1);
-      dup(p[1]);
+      dup(p[1]);  // left: redirect stdout to write end of a pipe
       close(p[0]);
       close(p[1]);
       runcmd(pcmd->left);
     }
     if(fork1() == 0){
       close(0);
-      dup(p[0]);
+      dup(p[0]);  // right: redirect stdin to read end of a pipe
       close(p[0]);
       close(p[1]);
       runcmd(pcmd->right);

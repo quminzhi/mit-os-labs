@@ -150,6 +150,16 @@ UPROGS=\
 	$U/_wc\
 	$U/_zombie\
 
+ifeq ($(LAB),util)
+UPROGS += \
+	$U/_redirect-demo \
+	$U/_pipe-demo \
+	$U/_pingpong \
+	$U/_sleep \
+	$U/_primes \
+	$U/_find \
+	$U/_xargs
+endif
 
 ifeq ($(LAB),syscall)
 UPROGS += \
