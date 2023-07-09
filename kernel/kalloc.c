@@ -80,3 +80,13 @@ kalloc(void)
     memset((char*)r, 5, PGSIZE); // fill with junk
   return (void*)r;
 }
+
+// return size of free kernel memory
+uint64
+sfreemem() {
+  struct run * p = kmem.freelist;
+  int npages = 0;
+  for (; p; npages++, p = p->next)
+    ;
+  return npages * PGSIZE;
+}
